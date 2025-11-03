@@ -127,6 +127,150 @@
       background-image: linear-gradient(100deg, #ffffff 40%, #f7f7f7 63%, #ffffff 79%);
     }
   </style>
+  <style>
+    *{
+      scroll-behavior: smooth;
+    }
+
+    .order-form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border: 1px solid #000000;
+      padding: 20px;
+    }
+
+    .product-info {
+      border-bottom: 1px solid #000000;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+
+    .product-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #000000;
+    }
+
+    .price-section {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 10px;
+    }
+
+    .regular-price {
+      text-decoration: line-through;
+      color: #000000;
+      font-size: 18px;
+    }
+
+    .sale-price {
+      color: #000000;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .save-price {
+      color: #000000;
+      font-size: 16px;
+      background-color: #f0f0f0;
+      padding: 2px 8px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #000000;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #000000;
+      background-color: #ffffff;
+      color: #000000;
+      font-size: 14px;
+      border-radius: 0;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border: 1px solid #000000;
+      background-color: #ffffff;
+    }
+
+    .quantity-selector {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .quantity-btn {
+      width: 30px;
+      height: 30px;
+      border: 1px solid #000000;
+      background-color: #ffffff;
+      color: #000000;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0;
+    }
+
+    .quantity-input {
+      width: 60px;
+      text-align: center;
+      border: 1px solid #000000;
+      background-color: #ffffff;
+      color: #000000;
+      border-radius: 0;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 15px;
+      background-color: #000000;
+      color: #ffffff;
+      border: 1px solid #000000;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      text-transform: uppercase;
+      border-radius: 0;
+    }
+
+    .submit-btn:hover {
+      background-color: #333333;
+    }
+
+    .shipping-info {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #000000;
+      font-size: 14px;
+      color: #000000;
+    }
+
+    .payment-methods {
+      margin-top: 15px;
+      font-size: 12px;
+      color: #000000;
+    }
+  </style>
   <script>
     document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
 
@@ -2068,12 +2212,13 @@
                             <form method="post" action="/cart/add"
                               id="AddToCartForm-template--17090909339723__main-7447209017419" accept-charset="UTF-8"
                               class="product-single__form" enctype="multipart/form-data"><input type="hidden"
-                                name="form_type" value="product" /><input type="hidden" name="utf8" value="✓" /><button
-                                type="submit" name="add" data-add-to-cart class="btn btn--full add-to-cart">
+                                name="form_type" value="product" /><input type="hidden" name="utf8" value="✓" />
+                                <a href="#orderForm"
+                                name="add" data-add-to-cart class="btn btn--full add-to-cart">
                                 <span data-add-to-cart-text data-default-text="Tambah ke troli">
                                   Tambah ke troli
                                 </span>
-                              </button>
+                              </a>
                               <div class="shopify-payment-terms product__policies"><shopify-payment-terms
                                   variant-id="41794134868043"
                                   shopify-meta="{&quot;type&quot;:&quot;product&quot;,&quot;currency_code&quot;:&quot;USD&quot;,&quot;country_code&quot;:&quot;US&quot;,&quot;variants&quot;:[{&quot;id&quot;:41794134868043,&quot;price_per_term&quot;:&quot;$19.99&quot;,&quot;full_price&quot;:&quot;$39.99&quot;,&quot;eligible&quot;:true,&quot;available&quot;:true,&quot;number_of_payment_terms&quot;:2}],&quot;min_price&quot;:&quot;$35.00&quot;,&quot;max_price&quot;:&quot;$30,000.00&quot;,&quot;financing_plans&quot;:[{&quot;min_price&quot;:&quot;$35.00&quot;,&quot;max_price&quot;:&quot;$49.99&quot;,&quot;terms&quot;:[{&quot;apr&quot;:0,&quot;loan_type&quot;:&quot;split_pay&quot;,&quot;installments_count&quot;:2}]},{&quot;min_price&quot;:&quot;$50.00&quot;,&quot;max_price&quot;:&quot;$149.99&quot;,&quot;terms&quot;:[{&quot;apr&quot;:0,&quot;loan_type&quot;:&quot;split_pay&quot;,&quot;installments_count&quot;:4}]},{&quot;min_price&quot;:&quot;$150.00&quot;,&quot;max_price&quot;:&quot;$999.99&quot;,&quot;terms&quot;:[{&quot;apr&quot;:0,&quot;loan_type&quot;:&quot;split_pay&quot;,&quot;installments_count&quot;:4},{&quot;apr&quot;:15,&quot;loan_type&quot;:&quot;interest&quot;,&quot;installments_count&quot;:3},{&quot;apr&quot;:15,&quot;loan_type&quot;:&quot;interest&quot;,&quot;installments_count&quot;:6},{&quot;apr&quot;:15,&quot;loan_type&quot;:&quot;interest&quot;,&quot;installments_count&quot;:12}]},{&quot;min_price&quot;:&quot;$1,000.00&quot;,&quot;max_price&quot;:&quot;$30,000.00&quot;,&quot;terms&quot;:[{&quot;apr&quot;:15,&quot;loan_type&quot;:&quot;interest&quot;,&quot;installments_count&quot;:3},{&quot;apr&quot;:15,&quot;loan_type&quot;:&quot;interest&quot;,&quot;installments_count&quot;:6},{&quot;apr&quot;:15,&quot;loan_type&quot;:&quot;interest&quot;,&quot;installments_count&quot;:12}]}],&quot;installments_buyer_prequalification_enabled&quot;:false,&quot;seller_id&quot;:4313883}"
@@ -4643,6 +4788,91 @@
 
 
         </div>
+        <div class="order-form-container">
+          <div class="product-info">
+            <h1 class="product-title">Pencuci Intim Lelaki Seimbang pH</h1>
+            <div class="price-section">
+              <span class="regular-price">$80.00</span>
+              <span class="sale-price">$39.99</span>
+              <span class="save-price">Jimat $40.01</span>
+            </div>
+          </div>
+
+          <form id="orderForm">
+            <div class="form-group">
+              <label for="name">Nama Penuh</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">E-mel</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Nombor Telefon</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+              <label for="address">Alamat Penghantaran</label>
+              <textarea id="address" name="address" rows="3" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="city">Bandar</label>
+              <input type="text" id="city" name="city" required>
+            </div>
+
+            <div class="form-group">
+              <label for="postcode">Poskod</label>
+              <input type="text" id="postcode" name="postcode" required>
+            </div>
+
+            <div class="form-group">
+              <label for="state">Negeri</label>
+              <select id="state" name="state" required>
+                <option value="">Pilih Negeri</option>
+                <option value="johor">Johor</option>
+                <option value="kedah">Kedah</option>
+                <option value="kelantan">Kelantan</option>
+                <option value="melaka">Melaka</option>
+                <option value="negeri-sembilan">Negeri Sembilan</option>
+                <option value="pahang">Pahang</option>
+                <option value="perak">Perak</option>
+                <option value="perlis">Perlis</option>
+                <option value="pulau-pinang">Pulau Pinang</option>
+                <option value="sabah">Sabah</option>
+                <option value="sarawak">Sarawak</option>
+                <option value="selangor">Selangor</option>
+                <option value="terengganu">Terengganu</option>
+                <option value="wp-kuala-lumpur">W.P. Kuala Lumpur</option>
+                <option value="wp-labuan">W.P. Labuan</option>
+                <option value="wp-putrajaya">W.P. Putrajaya</option>
+              </select>
+            </div>
+
+            <div class="quantity-selector">
+              <label>Kuantiti:</label>
+              <button type="button" class="quantity-btn" onclick="decreaseQuantity()">-</button>
+              <input type="number" class="quantity-input" id="quantity" name="quantity" value="1" min="1" max="10">
+              <button type="button" class="quantity-btn" onclick="increaseQuantity()">+</button>
+            </div>
+
+            <button type="submit" class="submit-btn">Buat Pesanan Sekarang</button>
+          </form>
+
+          <div class="shipping-info">
+            <p><strong>Maklumat Penghantaran:</strong></p>
+            <p>• Masa pemprosesan: 2 hari bekerja</p>
+            <p>• Penghantaran percuma untuk pesanan melebihi $100</p>
+            <p>• Penghantaran ke seluruh Malaysia</p>
+          </div>
+
+          <div class="payment-methods">
+            <p><strong>Kaedah Pembayaran:</strong> Kad Kredit/Debit, Online Banking, Touch 'n Go, Boost</p>
+          </div>
+        </div>
         <section id="shopify-section-template--17090909339723__loox-product-reviews-app-section"
           class="shopify-section">
           <div class="index-section">
@@ -4861,7 +5091,8 @@
                   <div id="Footer-1494292487693" class="collapsible-content collapsible-content--small">
                     <div class="collapsible-content__inner">
                       <div class="footer__collapsible">
-                        <p>Langgan dan jimat sambil menikmati penghantaran automatik yang mudah untuk produk kegemaran anda.
+                        <p>Langgan dan jimat sambil menikmati penghantaran automatik yang mudah untuk produk kegemaran
+                          anda.
                         </p>
                         <form method="post" action="/contact#newsletter-footer" id="newsletter-footer"
                           accept-charset="UTF-8" class="contact-form"><input type="hidden" name="form_type"
@@ -6394,7 +6625,29 @@
       }
     }
   </script>
+    <script>
+      function increaseQuantity() {
+        const quantityInput = document.getElementById('quantity');
+        let quantity = parseInt(quantityInput.value);
+        if (quantity < 10) {
+          quantityInput.value = quantity + 1;
+        }
+      }
 
+      function decreaseQuantity() {
+        const quantityInput = document.getElementById('quantity');
+        let quantity = parseInt(quantityInput.value);
+        if (quantity > 1) {
+          quantityInput.value = quantity - 1;
+        }
+      }
+
+      document.getElementById('orderForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert('Terima kasih! Pesanan anda telah diterima. Kami akan menghubungi anda tidak lama lagi.');
+        // Di sini anda boleh tambahkan kod untuk menghantar data ke server
+      });
+    </script>
     <!-- END app snippet --><!-- BEGIN app snippet: deal_blocks -->
 
 
